@@ -13,6 +13,7 @@ public class Main {
         gra.setIconImage(new ImageIcon("").getImage());
 
         gra.setTitle("Obraz");
+
         gra.setBounds(400,400,400 + 14, 400 + 14 + 23);
         gra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gra.setVisible(true);*/
