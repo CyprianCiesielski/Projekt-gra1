@@ -116,7 +116,7 @@ public class Postac {
 
     }
 
-        public void statystyki(){
+     public void statystyki(){
             System.out.println("Życie:   " + pasek(zycie, 100));
             System.out.println("Zdrowie: " + pasek(zdrowie, 100));
             System.out.println("Siła:    " + pasek(sila, 100));
