@@ -7,14 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-       /*JFrame gra = new JFrame();
+       JFrame gra = new JFrame();
         Panel p = new Panel();
         gra.add(p);
         gra.setIconImage(new ImageIcon("").getImage());
         gra.setTitle("Obraz");
-        gra.setBounds(4,4,1510 + 14, 800 + 14 + 23);
+        gra.setBounds(4,4,800, 800);
         gra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gra.setVisible(true);*/
+        gra.setVisible(true);
 
 
 Scanner sc = new Scanner(System.in);
