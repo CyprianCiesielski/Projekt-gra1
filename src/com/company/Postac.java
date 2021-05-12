@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Postac {
     String imie;
     int zycie;

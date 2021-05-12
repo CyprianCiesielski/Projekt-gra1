@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
+
 public class Prawo {
 
     public static void p(Postac postac){
