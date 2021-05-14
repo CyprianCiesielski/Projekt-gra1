@@ -29,6 +29,8 @@ public class Pokoje {
          }
 
      }
+
+
      public static void Lbroni(Postac postac, Przedmiot miecz, Przedmiot tarcza){
          int c = 0;
          c = (int)(Math.random()*3);
@@ -77,24 +79,28 @@ if(c>=0 && c<=2){
 public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
     int c = 0;
         c = (int)(Math.random()*100);
-    if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && c%2==0){
+   if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && c%2==0){
+       System.out.println("Wygrałeś!");
+        postac.setZycie(-20);
+        postac.setSila(-10);
+        postac.setSytosc(-10);
+    }
+    if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%3==0) {
+        System.out.println("Wygrałeś!");
         postac.setZycie(-30);
         postac.setSila(-20);
         postac.setSytosc(-10);
     }
-    if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%3==0) {
+    if(miecz.ilosc == 1 &&  c%3==0) {
+        System.out.println("Wygrałeś!");
         postac.setZycie(-40);
         postac.setSila(-30);
-        postac.setSytosc(-10);
-    }
-    if(miecz.ilosc == 1 &&  c%4==0) {
-        postac.setZycie(-50);
-        postac.setSila(-40);
         postac.setSytosc(-20);
     }
-    if(c%5==0) {
-        postac.setZycie(-70);
-        postac.setSila(-50);
+    if(c%2==0) {
+        System.out.println("Wygrałeś!");
+        postac.setZycie(-50);
+        postac.setSila(-40);
         postac.setSytosc(-20);
     }
     else{
@@ -145,7 +151,6 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
                 toporek.ilosc++;
                 break;
         }
-
     }
 
 
@@ -158,7 +163,7 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
 
 
 
-    public static void smok(Scanner sc, Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
+    public static void smok(Scanner sc, Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza, Przedmiot chlopiec){
         int w = 0;
         System.out.println("Spotkałeś strasznego smokależącego na górze złota. Na szczęście śpi.");
         System.out.println("Co chcesz zrobić?");
@@ -168,11 +173,18 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         w = sc.nextInt();
         switch(w){
         case 1: {
-            System.out.println("Smok się obudził i musiałeś z niim walczyć, niestety przegrałeś");
-            if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1){
+            System.out.println("Smok się obudził i musiałeś z nim walczyć.");
+            if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && chlopiec.ilosc == 1) {
+                System.out.println("Twój przyjaciel zginął w walce.");
                 postac.setZycie(-50);
                 postac.setSila(-60);
                 postac.setSytosc(-15);
+            }
+            if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1) {
+                postac.setZycie(-50);
+                postac.setSila(-60);
+                postac.setSytosc(-15);
+            }
                 if(miecz.ilosc == 1 && tarcza.ilosc == 1) {
                     postac.setZycie(-60);
                     postac.setSila(-60);
@@ -184,9 +196,10 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
                     postac.setSytosc(-20);
                 }
                 else{
+                    System.out.println("NIestety przegrałeś.");
                     postac.setZycie(-100);
                 }
-}
+
             break;
         }
             case 2:{
@@ -203,7 +216,7 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         }
     }
 
-    public static void kisezniczka(Scanner sc, Postac postac){
+    public static void ksiezniczka(Scanner sc, Postac postac){
         int w = 0;
         System.out.println("Księżniczka pyta cię jak wygląda jej nowa sukienka.");
         System.out.println("Co chcesz zrobić?");
@@ -229,26 +242,114 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         }
     }
 
+    public static void przyjaciel(Scanner sc, Postac postac, Przedmiot chlopiec){
+         int w = 0;
+         System.out.println("Spotkałeś chłopoca, kóty pyta czy chcesz zostać jego przyjacielem. Co mu powiesz?");
+         System.out.println("1. Tak.");
+         System.out.println("2. Nie.");
+         w = sc.nextInt();
+        switch(w){
+            case 1: {
+                System.out.println("Cłopiec bardzo się ucieszył i postaniwił towarzyszyć ci na dobre i na złe. Idzie z tobą.");
+                chlopiec.ilosc++;
+                break;
+            }
+            case 2:{
+                System.out.println("Chlopiec jestniezwykle smutny, ale puszcza cię dalej.");
+                postac.setZdrowie(-5);
+                break;
+            }
+
+        }
+    }
+
+    public static void skrzynia(Scanner sc, Postac postac, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot miecz, Przedmiot tarcza){
+         int w = 0;
+         System.out.println("W tym pokoju leży skrzynia. Może sz labo ją otworzyć i iść w lewo albo pójść w prawo. Co zrobisz?");
+         System.out.println("1. Pójdę w prawo");
+         System.out.println("2. Otworzę skrzynię");
+         w = sc.nextInt();
+         int c = (int)(Math.random()*4);
+switch (w){
+    case 1:
+        System.out.println("Jak chcesz");
+        break;
+    case 2:
+        if (c == 0) {
+            Pokoje.Llekow(postac, opatrunki, odtrutka, trutka);
+        }
+        if(c == 1){
+            Pokoje.Lposilku(postac, jablko, trutka, mieso);
+        }
+        if(c == 2){
+            Pokoje.Lbroni(postac, miecz, tarcza);
+        }
+        else{
+            System.out.println("Skrzynia jest pusta");
+        }
+        break;
+}
+
+     }
+
+     public static void smieci(Scanner sc, Postac postac){
+         int w = 0;
+         System.out.println("Przed prawymi drzwiami leży wielka sterta śmieci. CHcesz ją przesunąć czy iść w lewo?");
+             System.out.println("1. Chcę posprzątać i iść w prawo.");
+         System.out.println("2. Chcę iść w lewo.");
+             w = sc.nextInt();
+             switch (w){
+                 case 1:
+                     System.out.println("Jak chcesz.");
+                     break;
+                 case 2:
+                     System.out.println("Jak chcesz.");
+                     postac.setSila(-10);
+                      break;
+             }
+     }
+
+    public static void aplubj(Scanner sc, Postac postac, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka){
+         int w = 0;
+         System.out.println("Czeka cię trudna decyzja. Możesz albo otworzyć skrzynkę z jedzeniem i pójść w prawo, albo otworzyć skrzynkę z opatrunkami i iść w lewo. Co wolisc?");
+    System.out.println("1. Chcę otworzyć skrzynkę z jedzeniem");
+    System.out.println("2. Chcę otworzyć skrzynkę z apteczką");
+    w = sc.nextInt();
+    switch (w){
+        case 1:
+            Pokoje.Lposilku(postac, jablko, trutka, mieso);
+            break;
+        case 2:
+            Pokoje.Llekow(postac, opatrunki, odtrutka, trutka);
+            break;
+    }
+
+     }
+
     public static void koniec(Postac postac){
          System.out.println("Wygrałeś");
          postac.gramy = false;
     }
 
-public static void przeciwnik(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
-System.out.println("Spotkałeś coś potwornego. musisz z tym walczyć.");
-Lwygranej( postac, miecz, toporek, tarcza);
+public static void przeciwnik(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza) {
+    System.out.println("Spotkałeś coś potwornego. musisz z tym walczyć.");
+    Lwygranej(postac, miecz, toporek, tarcza);
+
 }
 
 public static void jedzenie(Postac postac, Przedmiot trutka, Przedmiot mieso, Przedmiot jablko){
 Lposilku(postac, trutka, mieso, jablko);
+
 }
 
 public static void bron(Postac postac, Przedmiot miecz, Przedmiot tarcza){
 Lbroni(postac, miecz, tarcza);
+
 }
 
 public static void opatrunki(Postac postac, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot trutka){
 Llekow(postac, opatrunki, odtrutka, trutka);
+
 }
 
 }
