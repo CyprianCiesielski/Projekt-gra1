@@ -243,7 +243,7 @@ public static void jedzenie(Postac postac, Przedmiot trutka, Przedmiot mieso, Pr
 Lposilku(postac, trutka, mieso, jablko);
 }
 
-public static void bron(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
+public static void bron(Postac postac, Przedmiot miecz, Przedmiot tarcza){
 Lbroni(postac, miecz, tarcza);
 }
 
