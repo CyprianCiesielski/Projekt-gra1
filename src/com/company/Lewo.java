@@ -1,25 +1,487 @@
 package com.company;
-
-
 import java.util.Scanner;
 
 public class Lewo {
 
-//zakręty w lewo
+    public static void gdzie(Postac postac){
+            postac.statystyki();
+            System.out.println("Gdzie chcesz iść?");
+            System.out.println("1. W prawo.");
+            System.out.println("2. W lewo.");
 
-    public static void l(Postac postac, Przedmiot toporek, Przedmiot tarcza, Przedmiot miecz, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka){
+    }
+
+    public static void l(Postac postac, Przedmiot toporek, Przedmiot tarcza, Przedmiot miecz, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot chlopiec){
         Scanner sc = new Scanner(System.in);
-
         int d = 0;
-        int w = 0;
 
         Pokoje.pusto(postac);
+            Lewo.gdzie(postac);
         d = sc.nextInt();
-        switch (d) {
+        switch (d){
             case 1:
+                    Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
 
+                    Pokoje.listy(sc, postac);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                    Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                    Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                    Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                switch (d){
+                    case 1:
+                            Pokoje.ksiezniczka(sc, postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.topor(sc, postac, toporek);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.smok(sc, postac, miecz, toporek, tarcza, chlopiec);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.koniec(postac);
+                        break;
+
+                    case 2 :
+
+                        Pokoje.przyjaciel(sc, postac, chlopiec);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.topor(sc, postac, toporek);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.smok(sc, postac, miecz, toporek, tarcza, chlopiec);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.koniec(postac);
+                        break;
+                }
+                break;
+
+            case 2:
+
+                Pokoje.bron(postac, miecz, tarcza);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                Pokoje.listy(sc, postac);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                if(postac.zycie > 0) {
+                    Lewo.gdzie(postac);
+                    d = sc.nextInt();
+                }
+                else break;
+
+                switch (d) {
+                    case 1:
+                        Pokoje.smieci(sc, postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.aplubj(sc, postac, jablko, miecz, trutka, opatrunki, odtrutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.smok(sc, postac, miecz, toporek, tarcza, chlopiec);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.koniec(postac);
+                        break;
+
+
+                    case 2:
+
+                        Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.topor(sc, postac, toporek);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.smok(sc, postac, miecz, toporek, tarcza, chlopiec);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.pusto(postac);
+                        if(postac.zycie > 0) {
+                            Lewo.gdzie(postac);
+                            d = sc.nextInt();
+                        }
+                        else break;
+
+                        Pokoje.koniec(postac);
+                        break;
+                }
                 break;
         }
+
     }
 }
 
