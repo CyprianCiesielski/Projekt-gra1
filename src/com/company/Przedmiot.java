@@ -9,12 +9,12 @@ public class Przedmiot {
     int sytosc;
     int ilosc;
 
-    public Przedmiot(String nazwa, int zy, int zdr, int si, int sy){
+    public Przedmiot(String nazwa, int zycie, int zdrowie, int sila, int sytosc){
         this.nazwa = nazwa;
-        zdrowie = zdr;
-        zycie = zy;
-        sila = si;
-        sytosc = sy;
+        this.zdrowie = zdrowie;
+        this.zycie = zycie;
+        this.sila = sila;
+        this.sytosc = sytosc;
         ilosc = 0;
     }
 

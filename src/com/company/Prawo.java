@@ -157,6 +157,8 @@ public class Prawo {
 
                             Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
                             if (postac.zycie > 0) {
+                                System.out.println("Idziesz dalej? 1. tak / 2. nie");
+                                d = sc.nextInt();
                             }
                             else break;
 
@@ -379,6 +381,8 @@ public class Prawo {
 
                             Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
                             if (postac.zycie > 0) {
+                                System.out.println("Idziesz dalej? 1. tak / 2. nie");
+                                d = sc.nextInt();
                             }
                             else break;
 
@@ -403,7 +407,7 @@ public class Prawo {
                             }
                             else break;
 
-                            Pokoje.pusto(postac);
+                            Pokoje.ksiezniczka(sc, postac);
                             if (postac.zycie > 0) {
                                 Prawo.gdzie(postac);
                                 d = sc.nextInt();
@@ -431,7 +435,7 @@ public class Prawo {
                             }
                             else break;
 
-                            Pokoje.pusto(postac);
+                            Pokoje.bron(postac, miecz, tarcza);
                             if (postac.zycie > 0) {
                                 Prawo.gdzie(postac);
                                 d = sc.nextInt();

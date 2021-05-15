@@ -385,6 +385,8 @@ public class Lewo {
 
                         Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
                         if (postac.zycie > 0) {
+                            System.out.println("Idziesz dalej? 1. tak / 2. nie");
+                            d = sc.nextInt();
                         }
                         else break;
 

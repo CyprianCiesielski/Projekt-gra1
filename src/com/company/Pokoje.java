@@ -11,16 +11,16 @@ public class Pokoje {
              if(postac.zycie < 70 && trutka.ilosc == 0){
                  System.out.println("Znalazłeś opatrunki (właśnie to czego najbardziej potrzebowałeś).");
                  opatrunki.uzyj(postac);
-             }
+             }else
              if(postac.zycie >= 70){
-                 System.out.println("Znalazłeś opatrunki, szkoda, żę do niczego ci się nie przydadzą.");
+                 System.out.println("Znalazłeś opatrunki, szkoda, że do niczego ci się nie przydadzą.");
              }
          }
 
          else{
              if(trutka.ilosc == 0){
                  System.out.println("Znalazłeś odtrutkę. Zaczynasz żałować, żę niczym się nie otrułeś.");
-             }
+             }else
              if(trutka.ilosc > 0){
                  System.out.println("Znalazłeś odtrunkę na truciznę, którą wcześniej zażyłeś.");
                  odtrutka.uzyj(postac);
@@ -36,7 +36,7 @@ public class Pokoje {
          c = (int)(Math.random()*3);
          if(c>=0 && c<=1){
              if(miecz.ilosc == 1){
-                 System.out.println("Znalazłeś drugi miecz. Szkoda, żę nie możesz zabrać go ze sobą");
+                 System.out.println("Znalazłeś drugi miecz. Szkoda, że nie możesz zabrać go ze sobą");
              }else
              if(miecz.ilosc == 0) {
                  System.out.println("Znalazłeś miecz.");
@@ -56,7 +56,7 @@ public class Pokoje {
      }
 
 
-     public static void Lposilku(Postac postac,Przedmiot jablko, Przedmiot trutka, Przedmiot mieso){
+     public static void Lposilku(Postac postac, Przedmiot jablko, Przedmiot trutka, Przedmiot mieso){
          int c = 0;
          c = (int)(Math.random()*9);
 if(c>=0 && c<=2){
@@ -80,30 +80,30 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         c = (int)(Math.random()*100);
    if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && c%2==0){
        System.out.println("Wygrałeś!");
-        postac.setZycie(-20);
+        postac.setZycie(-10);
         postac.setSila(-10);
         postac.setSytosc(-10);
-    }
+    }else
     if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%2==0) {
         System.out.println("Wygrałeś!");
-        postac.setZycie(-30);
+        postac.setZycie(-20);
         postac.setSila(-20);
         postac.setSytosc(-10);
-    }
+    }else
     if(miecz.ilosc == 1 &&  c%2==0) {
         System.out.println("Wygrałeś!");
-        postac.setZycie(-40);
+        postac.setZycie(-30);
         postac.setSila(-30);
         postac.setSytosc(-20);
-    }
+    }else
     if(c%2==0) {
         System.out.println("Wygrałeś!");
-        postac.setZycie(-50);
+        postac.setZycie(-40);
         postac.setSila(-40);
         postac.setSytosc(-20);
     }
     else {
-        postac.setZycie(-100);
+        postac.setZycie(-50);
     }
 }
 
@@ -243,7 +243,7 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
 
     public static void przyjaciel(Scanner sc, Postac postac, Przedmiot chlopiec){
          int w = 0;
-         System.out.println("Spotkałeś chłopoca, kóty pyta czy chcesz zostać jego przyjacielem. Co mu powiesz?");
+         System.out.println("Spotkałeś chłopoca, który pyta czy chcesz zostać jego przyjacielem. Co mu powiesz?");
          System.out.println("1. Tak.");
          System.out.println("2. Nie.");
          w = sc.nextInt();
@@ -264,7 +264,7 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
 
     public static void skrzynia(Scanner sc, Postac postac, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot miecz, Przedmiot tarcza){
          int w = 0;
-         System.out.println("W tym pokoju leży skrzynia. Może sz labo ją otworzyć i iść w lewo albo pójść w prawo. Co zrobisz?");
+         System.out.println("W tym pokoju leży skrzynia. Możesz albo ją otworzyć i iść w lewo albo pójść w prawo. Co zrobisz?");
          System.out.println("1. Pójdę w prawo");
          System.out.println("2. Otworzę skrzynię");
          w = sc.nextInt();

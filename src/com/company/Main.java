@@ -19,18 +19,18 @@ public class Main {
         Postac postac = new Postac(sc.nextLine());
 
 
-        Przedmiot mieso = new Przedmiot("jablko", 10, 10, 20, 50);
-        Przedmiot jablko = new Przedmiot("mieso", 10, 20, 10, 20);
+        Przedmiot mieso = new Przedmiot("mieso", 20, 10, 30, 50);
+        Przedmiot jablko = new Przedmiot("jablko", 15, 25, 20, 20);
         Przedmiot trutka = new Przedmiot("trutka", -10, -40, -15, 5);
 
         Przedmiot miecz = new Przedmiot("miecz", 0, 0, 0, 0);
         Przedmiot toporek = new Przedmiot("topór", 0, 0, 0, 0);
         Przedmiot tarcza = new Przedmiot("tarcza", 0, 0, 0, 0);
 
-        Przedmiot opatrunki = new Przedmiot("opatrunki", 10, 20, 10, 0);
-        Przedmiot odtrutka = new Przedmiot("odtrutka", 20, 30, 12, 0);
+        Przedmiot opatrunki = new Przedmiot("opatrunki", 20, 20, 10, 0);
+        Przedmiot odtrutka = new Przedmiot("odtrutka", 20, 40, 15, 0);
 
-        Przedmiot chlopiec = new Przedmiot("miecz", 0, 0, 0, 0);
+        Przedmiot chlopiec = new Przedmiot("chłopiec", 0, 0, 0, 0);
 
 
 
