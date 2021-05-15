@@ -8,11 +8,11 @@ public class Pokoje {
          int c = 0;
          c = (int)(Math.random()*3);
          if(c>=0 && c<=1){
-             if(postac.zycie < 60 && trutka.ilosc == 0){
+             if(postac.zycie < 70 && trutka.ilosc == 0){
                  System.out.println("Znalazłeś opatrunki (właśnie to czego najbardziej potrzebowałeś).");
                  opatrunki.uzyj(postac);
              }
-             if(postac.zycie >= 60){
+             if(postac.zycie >= 70){
                  System.out.println("Znalazłeś opatrunki, szkoda, żę do niczego ci się nie przydadzą.");
              }
          }
@@ -37,7 +37,7 @@ public class Pokoje {
          if(c>=0 && c<=1){
              if(miecz.ilosc == 1){
                  System.out.println("Znalazłeś drugi miecz. Szkoda, żę nie możesz zabrać go ze sobą");
-             }
+             }else
              if(miecz.ilosc == 0) {
                  System.out.println("Znalazłeś miecz.");
                  miecz.ilosc++;
@@ -46,7 +46,7 @@ public class Pokoje {
          else{
              if(tarcza.ilosc == 1){
              System.out.println("Znalazłeś drugą tarczę. Szkoda, żę nie możesz zabrać jej ze sobą");
-             }
+             }else
              if(tarcza.ilosc == 0){
                  System.out.println("Znalazłeś tarczę");
                  tarcza.ilosc++;
@@ -62,7 +62,7 @@ public class Pokoje {
 if(c>=0 && c<=2){
     System.out.println("Znalazłeś jabłko. Smacznego!");
     jablko.uzyj(postac);
-}
+}else
          if(c>=3 && c<=5){
              System.out.println("Znalazłeś mięso. Smacznego!");
              mieso.uzyj(postac);
@@ -71,7 +71,6 @@ if(c>=0 && c<=2){
              System.out.println("Znalazłeś coś dziwnego i zjadłeś. Na nieszczęście było zatrute. Szkoda.");
              trutka.uzyj(postac);
                  trutka.ilosc++;
-
          }
      }
 
@@ -85,13 +84,13 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         postac.setSila(-10);
         postac.setSytosc(-10);
     }
-    if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%3==0) {
+    if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%2==0) {
         System.out.println("Wygrałeś!");
         postac.setZycie(-30);
         postac.setSila(-20);
         postac.setSytosc(-10);
     }
-    if(miecz.ilosc == 1 &&  c%3==0) {
+    if(miecz.ilosc == 1 &&  c%2==0) {
         System.out.println("Wygrałeś!");
         postac.setZycie(-40);
         postac.setSila(-30);
@@ -103,7 +102,7 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
         postac.setSila(-40);
         postac.setSytosc(-20);
     }
-    else{
+    else {
         postac.setZycie(-100);
     }
 }
@@ -179,17 +178,17 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
                 postac.setZycie(-50);
                 postac.setSila(-60);
                 postac.setSytosc(-15);
-            }
+            }else
             if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1) {
                 postac.setZycie(-50);
                 postac.setSila(-60);
                 postac.setSytosc(-15);
-            }
+            }else
                 if(miecz.ilosc == 1 && tarcza.ilosc == 1) {
                     postac.setZycie(-60);
                     postac.setSila(-60);
                     postac.setSytosc(-15);
-                }
+                }else
                 if(miecz.ilosc == 1){
                     postac.setZycie(-70);
                     postac.setSila(-70);
@@ -272,15 +271,14 @@ public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, 
          int c = (int)(Math.random()*4);
 switch (w){
     case 1:
-        System.out.println("Jak chcesz");
         break;
     case 2:
         if (c == 0) {
             Pokoje.Llekow(postac, opatrunki, odtrutka, trutka);
-        }
+        }else
         if(c == 1){
             Pokoje.Lposilku(postac, jablko, trutka, mieso);
-        }
+        }else
         if(c == 2){
             Pokoje.Lbroni(postac, miecz, tarcza);
         }
@@ -300,10 +298,8 @@ switch (w){
              w = sc.nextInt();
              switch (w){
                  case 1:
-                     System.out.println("Jak chcesz.");
                      break;
                  case 2:
-                     System.out.println("Jak chcesz.");
                      postac.setSila(-10);
                       break;
              }
@@ -332,7 +328,7 @@ switch (w){
     }
 
 public static void przeciwnik(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza) {
-    System.out.println("Spotkałeś coś potwornego. musisz z tym walczyć.");
+    System.out.println("Spotkałeś coś potwornego. Musisz z tym walczyć.");
     Lwygranej(postac, miecz, toporek, tarcza);
 
 }

@@ -289,9 +289,7 @@ public class Lewo {
                 switch (d) {
                     case 1:
                         Pokoje.smieci(sc, postac);
-                        if(postac.zycie > 0) {
-                            Lewo.gdzie(postac);
-                            d = sc.nextInt();
+                        if (postac.zycie > 0) {
                         }
                         else break;
 
@@ -359,8 +357,8 @@ public class Lewo {
                         else break;
 
                         Pokoje.aplubj(sc, postac, jablko, miecz, trutka, opatrunki, odtrutka);
-                        if(postac.zycie > 0) {
-                            Lewo.gdzie(postac);
+                        if (postac.zycie > 0) {
+                            System.out.println("Idziesz dalej? 1. tak / 2. nie");
                             d = sc.nextInt();
                         }
                         else break;
@@ -386,9 +384,7 @@ public class Lewo {
                     case 2:
 
                         Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
-                        if(postac.zycie > 0) {
-                            Lewo.gdzie(postac);
-                            d = sc.nextInt();
+                        if (postac.zycie > 0) {
                         }
                         else break;
 
