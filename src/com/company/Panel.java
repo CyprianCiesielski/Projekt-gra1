@@ -5,31 +5,34 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Panel extends JPanel implements MouseListener {
-    public Panel(){
+    Main Main;
+    public Panel(Main Main){
+        this.Main = Main;
+        setSize(800,800);
         addMouseListener(this);
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        ImageIcon obrazstartowy = new ImageIcon("src/Gra/ekran_początkowy.png");
-        System.out.println(g.getClipBounds().width + " "+g.getClipBounds().height);
-        /*g.setColor(Color.gray);
-        for(int i = 0; i < 32; i++)
-            g.drawLine(i*20,0,i*20,479);
-        for(int i = 0; i < 24; i++)
-            g.drawLine(0,i*20,639,i*20);*/
-
-        g.drawImage(obrazstartowy.getImage(),0,0,800,800, null );
+        if(Main.start == true) {
+            ImageIcon obrazstartowy = new ImageIcon("src/Gra/ekran_początkowy.png");
+            System.out.println(g.getClipBounds().width + " " + g.getClipBounds().height);
+            g.drawImage(obrazstartowy.getImage(), 0, 0, 800, 800, null);
+        }
 
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getX()>=285 && e.getX()<=510) {
-            if (e.getY() >= 503 && e.getY() <= 610){
-
+        if(Main.game == false) {
+            if (e.getX() >= 285 && e.getX() <= 510) {
+                if (e.getY() >= 503 && e.getY() <= 610) {
+                    Main.start = false;
+                    Main.game = true;
+                    repaint();
+                }
             }
         }
         if(e.getX()>=327 && e.getX()<=478){

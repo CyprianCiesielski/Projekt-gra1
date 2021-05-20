@@ -3,17 +3,30 @@ import javax.swing.*;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public boolean start;
+    public boolean game;
+    public JFrame gra;
+    Panel p = new Panel(this);
+    informacja i = new informacja(this);
+    wątek w = new wątek(this);
 
-        /*JFrame gra = new JFrame();
-        Panel p = new Panel();
+    public Main() {
+        Scanner sc = new Scanner(System.in);
+        gra = new JFrame();
+        this.start = true;
+        this.game = false;
         gra.add(p);
+        gra.add(i);
+        gra.getContentPane().getComponent(0).setVisible(true);
+        gra.getContentPane().getComponent(1).setVisible(false);
+
         gra.setIconImage(new ImageIcon("").getImage());
-        gra.setTitle("Obraz");
+        gra.setTitle("Labirynt");
         gra.setBounds(4, 4, 800, 800);
         gra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gra.setVisible(true);*/
+        gra.setVisible(true);
+        gra.setLocationRelativeTo(null);
+        gra.setResizable(false);
 
         System.out.println("Jak masz na imię?");
         Postac postac = new Postac(sc.nextLine());
@@ -54,5 +67,8 @@ public class Main {
                 }
 
             }
+
+
+        w.start();
         }
     }
