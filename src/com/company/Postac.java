@@ -45,7 +45,7 @@ public class Postac {
                 System.out.println("Nie żyjesz");
             }
         }
-        if(this.zdrowie > 100)
+        if(this.zycie > 100)
             this.zycie = 100;
     }
 
@@ -61,12 +61,12 @@ public class Postac {
                 setZycie(-40);
                 setSytosc(-40);
                 setSila(-40);
-            }else
-                if(zdrowie < 20){
-                    setZycie(-10);
-                    setSytosc(-10);
-                    setSila(-10);
-                }
+            }/*else
+            if(zdrowie < 20){
+                setZycie(-10);
+                setSytosc(-10);
+                setSila(-10);
+            }*/
         }
         if(this.zdrowie > 100){
             this.zdrowie = 100;
@@ -117,12 +117,17 @@ public class Postac {
 
     }
 
-     public void statystyki(){
-            System.out.println("Życie:   " + pasek(zycie, 100));
-            System.out.println("Zdrowie: " + pasek(zdrowie, 100));
-            System.out.println("Siła:    " + pasek(sila, 100));
-            System.out.println("Sytość:  " + pasek(sytosc, 100));
-        }
+    public void statystyki(){
+        System.out.println("Życie:   " + pasek(zycie, 100));
+        System.out.println("Zdrowie: " + pasek(zdrowie, 100));
+        System.out.println("Siła:    " + pasek(sila, 100));
+        System.out.println("Sytość:  " + pasek(sytosc, 100));
+
+        System.out.println("Życie: " + zycie);
+        System.out.println("Zdrowie: " + zdrowie);
+        System.out.println("Siła:    " + sila);
+        System.out.println("Sytość:  " + sytosc);
+    }
 
 
 }

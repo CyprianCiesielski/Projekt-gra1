@@ -9,7 +9,7 @@ public class Przedmiot {
     int sytosc;
     int ilosc;
 
-    public Przedmiot(String nazwa, int zycie, int zdrowie, int sila, int sytosc){
+    public Przedmiot(String nazwa, int zdrowie, int zycie, int sila, int sytosc){
         this.nazwa = nazwa;
         this.zdrowie = zdrowie;
         this.zycie = zycie;
@@ -19,9 +19,9 @@ public class Przedmiot {
     }
 
     public void uzyj(Postac p){
-        p.setZycie(zycie);
-        p.setZdrowie(zdrowie);
-        p.setSila(sila);
-        p.setSytosc(sytosc);
+        p.setZdrowie(this.zdrowie);
+        p.setZycie(this.zycie);
+        p.setSila(this.sila);
+        p.setSytosc(this.sytosc);
     }
 }

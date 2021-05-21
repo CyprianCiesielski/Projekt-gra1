@@ -4,10 +4,10 @@ import java.util.Scanner;
 public class Lewo {
 
     public static void gdzie(Postac postac){
-            postac.statystyki();
-            System.out.println("Gdzie chcesz iść?");
-            System.out.println("1. W prawo.");
-            System.out.println("2. W lewo.");
+        postac.statystyki();
+        System.out.println("Gdzie chcesz iść?");
+        System.out.println("1. W prawo.");
+        System.out.println("2. W lewo.");
 
     }
 
@@ -16,39 +16,39 @@ public class Lewo {
         int d = 0;
 
         Pokoje.pusto(postac);
-            Lewo.gdzie(postac);
+        Lewo.gdzie(postac);
         d = sc.nextInt();
         switch (d){
             case 1:
-                    Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
                 }
                 else break;
 
-                    Pokoje.listy(sc, postac);
+                Pokoje.listy(sc, postac);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
                 }
                 else break;
 
-                    Pokoje.jedzenie(postac, trutka, mieso, jablko);
+                Pokoje.jedzenie(postac, trutka, mieso, jablko);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
                 }
                 else break;
 
-                    Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
+                Pokoje.przeciwnik(postac, miecz, toporek, tarcza);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
                 }
                 else break;
 
-                    Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
+                Pokoje.opatrunki(postac, opatrunki, odtrutka, trutka);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
@@ -57,7 +57,7 @@ public class Lewo {
 
                 switch (d){
                     case 1:
-                            Pokoje.ksiezniczka(sc, postac);
+                        Pokoje.ksiezniczka(sc, postac);
                         if(postac.zycie > 0) {
                             Lewo.gdzie(postac);
                             d = sc.nextInt();
@@ -290,6 +290,7 @@ public class Lewo {
                     case 1:
                         Pokoje.smieci(sc, postac);
                         if (postac.zycie > 0) {
+                            postac.statystyki();
                         }
                         else break;
 
@@ -358,6 +359,7 @@ public class Lewo {
 
                         Pokoje.aplubj(sc, postac, jablko, miecz, trutka, opatrunki, odtrutka);
                         if (postac.zycie > 0) {
+                            postac.statystyki();
                             System.out.println("Idziesz dalej? 1. tak / 2. nie");
                             d = sc.nextInt();
                         }
@@ -385,6 +387,7 @@ public class Lewo {
 
                         Pokoje.skrzynia(sc, postac, jablko, mieso, trutka, opatrunki, odtrutka, miecz, tarcza);
                         if (postac.zycie > 0) {
+                            postac.statystyki();
                             System.out.println("Idziesz dalej? 1. tak / 2. nie");
                             d = sc.nextInt();
                         }
@@ -482,6 +485,4 @@ public class Lewo {
 
     }
 }
-
-
 

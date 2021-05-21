@@ -32,43 +32,43 @@ public class Main {
         Postac postac = new Postac(sc.nextLine());
 
 
-        Przedmiot mieso = new Przedmiot("mieso", 20, 10, 30, 50);
-        Przedmiot jablko = new Przedmiot("jablko", 15, 25, 20, 20);
-        Przedmiot trutka = new Przedmiot("trutka", -10, -40, -15, 5);
+        Przedmiot mieso = new Przedmiot("mieso", 10, 20, 30, 50);
+        Przedmiot jablko = new Przedmiot("jablko", 25, 15, 20, 20);
+        Przedmiot trutka = new Przedmiot("trutka", -40, -10, -15, 5);
 
         Przedmiot miecz = new Przedmiot("miecz", 0, 0, 0, 0);
         Przedmiot toporek = new Przedmiot("topór", 0, 0, 0, 0);
         Przedmiot tarcza = new Przedmiot("tarcza", 0, 0, 0, 0);
 
         Przedmiot opatrunki = new Przedmiot("opatrunki", 20, 20, 10, 0);
-        Przedmiot odtrutka = new Przedmiot("odtrutka", 20, 40, 15, 0);
+        Przedmiot odtrutka = new Przedmiot("odtrutka", 40, 20, 15, 0);
 
         Przedmiot chlopiec = new Przedmiot("chłopiec", 0, 0, 0, 0);
 
 
 
-            int d = 0;
-            System.out.println("Wchodzisz do labiryntu. Szukasz skarbu. Bardzo starasz się przy tym nie zginąć. To dla ciebie ważne.");
-            System.out.println("Gdzie chcesz iść?");
-            System.out.println("1. W prawo");
-            System.out.println("2. W lewo");
-            d = sc.nextInt();
+        int d = 0;
+        System.out.println("Wchodzisz do labiryntu. Szukasz skarbu. Bardzo starasz się przy tym nie zginąć. To dla ciebie ważne.");
+        System.out.println("Gdzie chcesz iść?");
+        System.out.println("1. W prawo");
+        System.out.println("2. W lewo");
+        d = sc.nextInt();
 
-            while (postac.gramy) {
-                postac.statystyki();
-                switch (d) {
-                    case 1:
-                        Prawo.p(postac, toporek, tarcza, miecz, jablko, mieso, trutka, opatrunki, odtrutka, chlopiec);
-                        break;
-                    case 2:
-                        Lewo.l(postac, toporek, tarcza, miecz, jablko, mieso, trutka, opatrunki, odtrutka, chlopiec);
-                        break;
-
-                }
+        while (postac.gramy) {
+            postac.statystyki();
+            switch (d) {
+                case 1:
+                    Prawo.p(postac, toporek, tarcza, miecz, jablko, mieso, trutka, opatrunki, odtrutka, chlopiec);
+                    break;
+                case 2:
+                    Lewo.l(postac, toporek, tarcza, miecz, jablko, mieso, trutka, opatrunki, odtrutka, chlopiec);
+                    break;
 
             }
 
+        }
+
 
         w.start();
-        }
     }
+}
