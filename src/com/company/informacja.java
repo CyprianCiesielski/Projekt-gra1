@@ -27,7 +27,10 @@ public class informacja extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e)  {
         System.out.println(e.getPoint());
-        if(e.getX()>=40 && e.getX()<=334 && e.getY()>=477 && e.getY()<=591) {
+        if(e.getX()>=0 && e.getX()<=800 && e.getY()>=0 && e.getY()<=800) {
+            Main.pokój[0] = true;
+            Main.game = false;
+
         }
 
     }

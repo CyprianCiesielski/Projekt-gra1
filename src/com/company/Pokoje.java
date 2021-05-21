@@ -83,28 +83,28 @@ public class Pokoje {
             postac.setSila(-10);
             postac.setSytosc(-10);
             if(postac.zycie >0)
-            System.out.println("Wygrałeś!");
+                System.out.println("Wygrałeś!");
         }else
         if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%2==0) {
             postac.setZycie(-20);
             postac.setSila(-20);
             postac.setSytosc(-10);
             if(postac.zycie >0)
-            System.out.println("Wygrałeś!");
+                System.out.println("Wygrałeś!");
         }else
         if(miecz.ilosc == 1 &&  c%2==0) {
             postac.setZycie(-30);
             postac.setSila(-30);
             postac.setSytosc(-20);
             if(postac.zycie >0)
-            System.out.println("Wygrałeś!");
+                System.out.println("Wygrałeś!");
         }else
         if(c%2==0) {
             postac.setZycie(-40);
             postac.setSila(-40);
             postac.setSytosc(-20);
             if(postac.zycie >0)
-            System.out.println("Wygrałeś!");
+                System.out.println("Wygrałeś!");
         }
         else {
             postac.setZycie(-1);

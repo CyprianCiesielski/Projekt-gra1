@@ -3,11 +3,11 @@ package com.company;
 
 public class Postac {
     String imie;
-    int zycie;
-    int zdrowie;
+    public int zycie;
+    public int zdrowie;
     int sila;
     int sytosc;
-    boolean gramy;
+    public boolean gramy;
 
 
     public Postac(String imie) {

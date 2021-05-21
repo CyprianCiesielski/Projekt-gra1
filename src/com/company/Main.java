@@ -5,20 +5,60 @@ public class Main {
 
     public boolean start;
     public boolean game;
+    public boolean pokój[] = new boolean[36];
     public JFrame gra;
     Panel p = new Panel(this);
     informacja i = new informacja(this);
     wątek w = new wątek(this);
+    Pokojegraf g = new Pokojegraf(this);
 
     public Main() {
         Scanner sc = new Scanner(System.in);
         gra = new JFrame();
         this.start = true;
         this.game = false;
+        this.pokój[0-35] = false;
         gra.add(p);
         gra.add(i);
+        gra.add(g);
         gra.getContentPane().getComponent(0).setVisible(true);
         gra.getContentPane().getComponent(1).setVisible(false);
+        gra.getContentPane().getComponent(2).setVisible(false);
+        gra.getContentPane().getComponent(3).setVisible(false);
+        gra.getContentPane().getComponent(4).setVisible(false);
+        gra.getContentPane().getComponent(5).setVisible(false);
+        gra.getContentPane().getComponent(6).setVisible(false);
+        gra.getContentPane().getComponent(7).setVisible(false);
+        gra.getContentPane().getComponent(8).setVisible(false);
+        gra.getContentPane().getComponent(9).setVisible(false);
+        gra.getContentPane().getComponent(10).setVisible(false);
+        gra.getContentPane().getComponent(11).setVisible(false);
+        gra.getContentPane().getComponent(12).setVisible(false);
+        gra.getContentPane().getComponent(13).setVisible(false);
+        gra.getContentPane().getComponent(14).setVisible(false);
+        gra.getContentPane().getComponent(15).setVisible(false);
+        gra.getContentPane().getComponent(16).setVisible(false);
+        gra.getContentPane().getComponent(17).setVisible(false);
+        gra.getContentPane().getComponent(18).setVisible(false);
+        gra.getContentPane().getComponent(19).setVisible(false);
+        gra.getContentPane().getComponent(20).setVisible(false);
+        gra.getContentPane().getComponent(21).setVisible(false);
+        gra.getContentPane().getComponent(22).setVisible(false);
+        gra.getContentPane().getComponent(23).setVisible(false);
+        gra.getContentPane().getComponent(24).setVisible(false);
+        gra.getContentPane().getComponent(25).setVisible(false);
+        gra.getContentPane().getComponent(26).setVisible(false);
+        gra.getContentPane().getComponent(27).setVisible(false);
+        gra.getContentPane().getComponent(28).setVisible(false);
+        gra.getContentPane().getComponent(29).setVisible(false);
+        gra.getContentPane().getComponent(30).setVisible(false);
+        gra.getContentPane().getComponent(31).setVisible(false);
+        gra.getContentPane().getComponent(32).setVisible(false);
+        gra.getContentPane().getComponent(33).setVisible(false);
+        gra.getContentPane().getComponent(34).setVisible(false);
+        gra.getContentPane().getComponent(35).setVisible(false);
+        gra.getContentPane().getComponent(36).setVisible(false);
+        gra.getContentPane().getComponent(37).setVisible(false);
 
         gra.setIconImage(new ImageIcon("").getImage());
         gra.setTitle("Labirynt");
@@ -27,6 +67,8 @@ public class Main {
         gra.setVisible(true);
         gra.setLocationRelativeTo(null);
         gra.setResizable(false);
+
+        w.start();
 
         System.out.println("Jak masz na imię?");
         Postac postac = new Postac(sc.nextLine());
@@ -67,8 +109,5 @@ public class Main {
             }
 
         }
-
-
-        w.start();
     }
 }

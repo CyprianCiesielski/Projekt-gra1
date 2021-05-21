@@ -7,7 +7,7 @@ public class Przedmiot {
     int zdrowie;
     int sila;
     int sytosc;
-    int ilosc;
+    public int ilosc;
 
     public Przedmiot(String nazwa, int zdrowie, int zycie, int sila, int sytosc){
         this.nazwa = nazwa;
