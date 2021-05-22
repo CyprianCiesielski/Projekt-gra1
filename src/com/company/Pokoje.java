@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Pokoje {
+    Main Main;
 
     public static void Llekow(Postac postac, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot trutka){
         int c = 0;
@@ -112,11 +113,12 @@ public class Pokoje {
     }
 
 
-    public static void listy(Scanner sc, Postac postac){
+    public static void listy( Main Main, Scanner sc, Postac postac){
         int w = 0;
+        Main.pokój[1] = true;
         System.out.println("W tym pokoju jest wielka sterta listów. Trudno się będzie przez nią przedrzeć. Co chcesz zrobić?");
         System.out.println("1. Chcę posortować te listy.");
-        System.out.println("2. Chcę poszukać listu do mnie przechodząc.");
+        System.out.println("2. Poszukam listu, kiedy będę przechodził.");
         w = sc.nextInt();
         switch (w) {
             case 1:
