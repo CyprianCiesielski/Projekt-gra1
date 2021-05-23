@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Lewo {
 
+    private static com.company.Main Main;
+
     public static void gdzie(com.company.Postac postac){
             postac.statystyki();
             System.out.println("Gdzie chcesz iść?");
@@ -31,7 +33,7 @@ public class Lewo {
                 }
                 else break;
 
-                    com.company.Pokoje.listy(sc, postac);
+                    com.company.Pokoje.listy(Main, sc, postac);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
@@ -262,7 +264,7 @@ public class Lewo {
                 }
                 else break;
 
-                com.company.Pokoje.listy(sc, postac);
+                com.company.Pokoje.listy(Main, sc, postac);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();

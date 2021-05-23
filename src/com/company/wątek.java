@@ -1,7 +1,11 @@
 package com.company;
 
 import javax.security.auth.Refreshable;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
+import java.io.File;
 
 public class wątek extends Thread{
 
@@ -40,7 +44,7 @@ public class wątek extends Thread{
             Main.gra.getContentPane().getComponent(3).setVisible(true);
         }
 
-        if(Main.pokój[2]==false) {
+        /*if(Main.pokój[2]==false) {
             Main.gra.getContentPane().getComponent(4).setVisible(false);
         }
         if(Main.pokój[2]==true) {
@@ -277,12 +281,51 @@ public class wątek extends Thread{
         if(Main.pokój[35]==true) {
             Main.gra.getContentPane().getComponent(37).setVisible(true);
         }
+    */
     }
+
+    public void play(File sound){
+
+            try {
+
+                    Main.musicsec++;
+                    if (Main.musicsec%(25*349)==1){
+                        Main.muzykadogry = AudioSystem.getClip();
+
+                        AudioInputStream cyberpunk = AudioSystem.getAudioInputStream(sound);
+
+                        Main.muzykadogry.open(cyberpunk);
+
+                        Main.fc =(FloatControl) Main.muzykadogry.getControl(FloatControl.Type.MASTER_GAIN);
+                        Main.fc.setValue(-10);
+
+                    }
+                    if (Main.start == true) {
+
+                        Main.muzykadogry.start();
+                    }
+                    if (Main.start == false) {
+                        Main.muzykadogry.stop();
+                        Main.muzykadogry.setMicrosecondPosition(0);
+
+                    }
+
+            } catch (Exception ex) {
+                System.out.println("Error with playing sound.");
+                ex.printStackTrace();
+            }
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
 
     public void run(){
         while (true){
             windows();
+            play(Main.muzyka);
             try { Thread.sleep(40);
             }catch(InterruptedException e) {
                 e.printStackTrace();

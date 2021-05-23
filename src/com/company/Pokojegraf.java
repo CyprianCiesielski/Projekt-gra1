@@ -21,7 +21,7 @@ public class Pokojegraf extends JPanel implements MouseListener {
             g.drawImage(pokoj0.getImage(), 0, 0, 800, 800, null);
         }
         if(Main.pokój[1] == true) {
-            ImageIcon pokoj1 = new ImageIcon("");
+            ImageIcon pokoj1 = new ImageIcon("src/Gra/pokoje/pokoje z 2 drzwiami/stera listow.png");
             g.drawImage(pokoj1.getImage(), 0, 0, 800, 800, null);
         }
         if(Main.pokój[2] == true) {

@@ -1,5 +1,8 @@
 package com.company;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
+import java.io.File;
 import java.util.Scanner;
 public class Main {
 
@@ -7,25 +10,30 @@ public class Main {
     public boolean game;
     public boolean pokój[] = new boolean[36];
     public JFrame gra;
+    public FloatControl fc;
+    int musicsec;
+    public Clip muzykadogry;
+    public File muzyka = new File("xd");
     Panel p = new Panel(this);
     informacja i = new informacja(this);
     wątek w = new wątek(this);
     Pokojegraf g = new Pokojegraf(this);
+    Pokojegraf g1 = new Pokojegraf(this);
 
     public Main() {
         Scanner sc = new Scanner(System.in);
         gra = new JFrame();
         this.start = true;
         this.game = false;
-        this.pokój[0-35] = false;
         gra.add(p);
         gra.add(i);
         gra.add(g);
+        gra.add(g1);
         gra.getContentPane().getComponent(0).setVisible(true);
         gra.getContentPane().getComponent(1).setVisible(false);
         gra.getContentPane().getComponent(2).setVisible(false);
         gra.getContentPane().getComponent(3).setVisible(false);
-        gra.getContentPane().getComponent(4).setVisible(false);
+       /* gra.getContentPane().getComponent(4).setVisible(false);
         gra.getContentPane().getComponent(5).setVisible(false);
         gra.getContentPane().getComponent(6).setVisible(false);
         gra.getContentPane().getComponent(7).setVisible(false);
@@ -59,7 +67,7 @@ public class Main {
         gra.getContentPane().getComponent(35).setVisible(false);
         gra.getContentPane().getComponent(36).setVisible(false);
         gra.getContentPane().getComponent(37).setVisible(false);
-
+        */
         gra.setIconImage(new ImageIcon("").getImage());
         gra.setTitle("Labirynt");
         gra.setBounds(4, 4, 800, 800);

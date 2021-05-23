@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 
 public class Prawo {
+    private static com.company.Main Main;
 
     public static void gdzie(com.company.Postac postac) {
         postac.statystyki();
@@ -21,7 +22,7 @@ public class Prawo {
         Scanner sc = new Scanner(System.in);
         int d = 0;
 
-        com.company.Pokoje.listy(sc, postac);
+        com.company.Pokoje.listy(Main, sc, postac);
         Prawo.gdzie(postac);
             d = sc.nextInt();
             switch (d) {

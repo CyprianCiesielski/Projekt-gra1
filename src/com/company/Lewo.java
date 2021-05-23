@@ -2,6 +2,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Lewo {
+    static Main Main;
 
     public static void gdzie(Postac postac){
         postac.statystyki();
@@ -27,7 +28,7 @@ public class Lewo {
                 }
                 else break;
 
-                Pokoje.listy(sc, postac);
+                Pokoje.listy(Main, sc, postac);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();
@@ -258,7 +259,7 @@ public class Lewo {
                 }
                 else break;
 
-                Pokoje.listy(sc, postac);
+                Pokoje.listy(Main, sc, postac);
                 if(postac.zycie > 0) {
                     Lewo.gdzie(postac);
                     d = sc.nextInt();

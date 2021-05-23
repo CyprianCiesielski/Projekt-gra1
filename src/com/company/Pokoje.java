@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Pokoje {
-    Main Main;
+    Main Main = new Main();
 
     public static void Llekow(Postac postac, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot trutka){
         int c = 0;
@@ -113,7 +113,7 @@ public class Pokoje {
     }
 
 
-    public static void listy( Main Main, Scanner sc, Postac postac){
+    public static void listy(Main Main, Scanner sc, Postac postac){
         int w = 0;
         Main.pokój[1] = true;
         System.out.println("W tym pokoju jest wielka sterta listów. Trudno się będzie przez nią przedrzeć. Co chcesz zrobić?");
