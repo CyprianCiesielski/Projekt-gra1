@@ -2,8 +2,14 @@ package com.company;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class Main {
 
     public boolean start;
@@ -13,14 +19,17 @@ public class Main {
     public FloatControl fc;
     int musicsec;
     public Clip muzykadogry;
-    public File muzyka = new File("xd");
+    public File muzyka = new File("src/Gra/audio/muzykadogry.wav");
+
     Panel p = new Panel(this);
     informacja i = new informacja(this);
     wątek w = new wątek(this);
+    Pokoje p1 = new Pokoje(this);
     Pokojegraf g = new Pokojegraf(this);
     Pokojegraf g1 = new Pokojegraf(this);
 
     public Main() {
+        Pokoje.Main = this;
         Scanner sc = new Scanner(System.in);
         gra = new JFrame();
         this.start = true;
@@ -67,8 +76,17 @@ public class Main {
         gra.getContentPane().getComponent(35).setVisible(false);
         gra.getContentPane().getComponent(36).setVisible(false);
         gra.getContentPane().getComponent(37).setVisible(false);
-        */
-        gra.setIconImage(new ImageIcon("").getImage());
+        gra.getContentPane().getComponent(38).setVisible(false);
+        gra.getContentPane().getComponent(39).setVisible(false);
+        gra.getContentPane().getComponent(40).setVisible(false);
+        gra.getContentPane().getComponent(41).setVisible(false);
+        gra.getContentPane().getComponent(42).setVisible(false);
+        gra.getContentPane().getComponent(43).setVisible(false);
+        gra.getContentPane().getComponent(44).setVisible(false);
+        gra.getContentPane().getComponent(45).setVisible(false);
+
+        ImageIcon logo = new ImageIcon("src/Gra/ikona.png");
+        gra.setIconImage(logo.getImage());
         gra.setTitle("Labirynt");
         gra.setBounds(4, 4, 800, 800);
         gra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,8 +96,8 @@ public class Main {
 
         w.start();
 
-        System.out.println("Jak masz na imię?");
-        Postac postac = new Postac(sc.nextLine());
+        //System.out.println("Jak masz na imię?");
+        Postac postac = new Postac();
 
 
         Przedmiot mieso = new Przedmiot("mieso", 10, 20, 30, 50);

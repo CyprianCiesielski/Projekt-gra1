@@ -19,7 +19,6 @@ public class Prawo {
         int d = 0;
 
         Pokoje.listy(Main, sc, postac);
-        Main.pokój[1] = true;
         Prawo.gdzie(postac);
         d = sc.nextInt();
         switch (d) {

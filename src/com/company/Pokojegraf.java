@@ -24,6 +24,7 @@ public class Pokojegraf extends JPanel implements MouseListener {
             ImageIcon pokoj1 = new ImageIcon("src/Gra/pokoje/pokoje z 2 drzwiami/stera listow.png");
             g.drawImage(pokoj1.getImage(), 0, 0, 800, 800, null);
         }
+
         if(Main.pokój[2] == true) {
             ImageIcon pokoj2 = new ImageIcon("");
             g.drawImage(pokoj2.getImage(), 0, 0, 800, 800, null);
@@ -159,6 +160,30 @@ public class Pokojegraf extends JPanel implements MouseListener {
         if(Main.pokój[35] == true) {
             ImageIcon pokoj35 = new ImageIcon("");
             g.drawImage(pokoj35.getImage(), 0, 0, 800, 800, null);
+        }
+        if(Main.pokój[36] == true) {
+            ImageIcon pokoj36 = new ImageIcon("src/Gra/napisy po przejściu pokoju/oskarżenie o kłamstwo.png");
+            g.drawImage(pokoj36.getImage(), 0, 0, 750, 750, null);
+        }
+        if(Main.pokój[37] == true) {
+            ImageIcon pokoj37 = new ImageIcon("src/Gra/napisy po przejściu pokoju/obrazilesksiezniczke.png");
+            g.drawImage(pokoj37.getImage(), 0, 0, 750, 750, null);
+        }
+        if(Main.pokój[38] == true) {
+            ImageIcon pokoj38 = new ImageIcon("src/Gra/napisy po przejściu pokoju/udałocisieuciec.png");
+            g.drawImage(pokoj38.getImage(), 0, 0, 750, 750, null);
+        }
+        if(Main.pokój[39] == true) {
+            ImageIcon pokoj39 = new ImageIcon("src/Gra/napisy po przejściu pokoju/chlopiecjestszczesliwy.png");
+            g.drawImage(pokoj39.getImage(), 0, 0, 750, 750, null);
+        }
+        if(Main.pokój[40] == true) {
+            ImageIcon pokoj40 = new ImageIcon("src/Gra/napisy po przejściu pokoju/smutnychlopiec.png");
+            g.drawImage(pokoj40.getImage(), 0, 0, 750, 750, null);
+        }
+        if(Main.pokój[41] == true) {
+            ImageIcon pokoj41 = new ImageIcon("src/Gra/napisy po przejściu pokoju/wygrana z potworami.png");
+            g.drawImage(pokoj41.getImage(), 0, 0, 750, 750, null);
         }
     }
 

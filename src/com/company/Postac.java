@@ -2,7 +2,7 @@ package com.company;
 
 
 public class Postac {
-    String imie;
+    //String imie;
     public int zycie;
     public int zdrowie;
     int sila;
@@ -10,8 +10,8 @@ public class Postac {
     public boolean gramy;
 
 
-    public Postac(String imie) {
-        this.imie = imie;
+    public Postac() {
+        //this.imie = imie;
         zycie = 100;
         zdrowie = 100;
         sila = 100;
@@ -42,6 +42,16 @@ public class Postac {
             if(this.zycie <= 0){
                 this.zycie = 0;
                 gramy = false;
+                if(Main.pokój[24]==true) {
+                    Main.pokój[25] = false;
+                }
+                else
+                    Main.pokój[25] = true;
+                if(Main.pokój[29] == true) {
+                    Main.pokój[25] = false;
+                }
+                else
+                    Main.pokój[29] = true;
                 System.out.println("Nie żyjesz");
             }
         }

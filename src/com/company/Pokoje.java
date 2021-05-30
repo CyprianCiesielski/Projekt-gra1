@@ -29,7 +29,7 @@ public class Pokoje {
             }
         }
 
-    }
+        }
 
 
     public static void Lbroni(Postac postac, Przedmiot miecz, Przedmiot tarcza){
@@ -54,63 +54,60 @@ public class Pokoje {
             }
         }
 
-    }
+        }
 
 
-    public static void Lposilku(Postac postac, Przedmiot jablko, Przedmiot trutka, Przedmiot mieso){
-        int c = 0;
-        c = (int)(Math.random()*9);
-        if(c>=0 && c<=2){
-            System.out.println("Znalazłeś jabłko. Smacznego!");
-            jablko.uzyj(postac);
-        }else
-        if(c>=3 && c<=5){
-            System.out.println("Znalazłeś mięso. Smacznego!");
-            mieso.uzyj(postac);
+        public static void Lposilku (Postac postac, Przedmiot jablko, Przedmiot trutka, Przedmiot mieso){
+            int c = 0;
+            c = (int) (Math.random() * 9);
+            if (c >= 0 && c <= 2) {
+                Main.pokój[18] = true;
+                System.out.println("Znalazłeś jabłko. Smacznego!");
+                jablko.uzyj(postac);
+            } else if (c >= 3 && c <= 5) {
+                Main.pokój[19] = true;
+                System.out.println("Znalazłeś mięso. Smacznego!");
+                mieso.uzyj(postac);
+            } else {
+                Main.pokój[20] = true;
+                System.out.println("Znalazłeś coś dziwnego i zjadłeś. Na nieszczęście było zatrute. Szkoda.");
+                trutka.uzyj(postac);
+                trutka.ilosc++;
+            }
         }
-        else{
-            System.out.println("Znalazłeś coś dziwnego i zjadłeś. Na nieszczęście było zatrute. Szkoda.");
-            trutka.uzyj(postac);
-            trutka.ilosc++;
-        }
-    }
 
 
-    public static void Lwygranej(Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
-        int c = 0;
-        c = (int)(Math.random()*100);
-        if(miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && c%2==0){
-            postac.setZycie(-10);
-            postac.setSila(-10);
-            postac.setSytosc(-10);
-            if(postac.zycie >0)
-                System.out.println("Wygrałeś!");
-        }else
-        if(miecz.ilosc == 1 && tarcza.ilosc == 1 && c%2==0) {
-            postac.setZycie(-20);
-            postac.setSila(-20);
-            postac.setSytosc(-10);
-            if(postac.zycie >0)
-                System.out.println("Wygrałeś!");
-        }else
-        if(miecz.ilosc == 1 &&  c%2==0) {
-            postac.setZycie(-30);
-            postac.setSila(-30);
-            postac.setSytosc(-20);
-            if(postac.zycie >0)
-                System.out.println("Wygrałeś!");
-        }else
-        if(c%2==0) {
-            postac.setZycie(-40);
-            postac.setSila(-40);
-            postac.setSytosc(-20);
-            if(postac.zycie >0)
-                System.out.println("Wygrałeś!");
+        public static void Lwygranej (Postac postac, Przedmiot miecz, Przedmiot toporek, Przedmiot tarcza){
+            int c = 0;
+            c = (int) (Math.random() * 100);
+            if (miecz.ilosc == 1 && toporek.ilosc == 1 && tarcza.ilosc == 1 && c % 2 == 0) {
+                postac.setZycie(-10);
+                postac.setSila(-10);
+                postac.setSytosc(-10);
+                if (postac.zycie > 0)
+                    System.out.println("Wygrałeś!");
+            } else if (miecz.ilosc == 1 && tarcza.ilosc == 1 && c % 2 == 0) {
+                postac.setZycie(-20);
+                postac.setSila(-20);
+                postac.setSytosc(-10);
+                if (postac.zycie > 0)
+                    System.out.println("Wygrałeś!");
+            } else if (miecz.ilosc == 1 && c % 2 == 0) {
+                postac.setZycie(-30);
+                postac.setSila(-30);
+                postac.setSytosc(-20);
+                if (postac.zycie > 0)
+                    System.out.println("Wygrałeś!");
+            } else if (c % 2 == 0) {
+                postac.setZycie(-40);
+                postac.setSila(-40);
+                postac.setSytosc(-20);
+                if (postac.zycie > 0)
+                    System.out.println("Wygrałeś!");
+            } else {
+                postac.setZycie(-1);
+            }
         }
-        else {
-            postac.setZycie(-1);
-        }
-    }
 
 
     public static void listy(Main Main, Scanner sc, Postac postac){
@@ -265,8 +262,8 @@ public class Pokoje {
                 break;
             }
 
+            }
         }
-    }
 
     public static void skrzynia(Scanner sc, Postac postac, Przedmiot jablko, Przedmiot mieso, Przedmiot trutka, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot miecz, Przedmiot tarcza){
         int w = 0;
@@ -294,7 +291,7 @@ public class Pokoje {
                 break;
         }
 
-    }
+        }
 
     public static void smieci(Scanner sc, Postac postac){
         int w = 0;
@@ -326,7 +323,7 @@ public class Pokoje {
                 break;
         }
 
-    }
+        }
 
     public static void koniec(Postac postac){
         System.out.println("Wygrałeś");
@@ -339,19 +336,19 @@ public class Pokoje {
 
     }
 
-    public static void jedzenie(Postac postac, Przedmiot trutka, Przedmiot mieso, Przedmiot jablko){
-        Lposilku(postac, jablko, trutka, mieso);
+        public static void jedzenie (Postac postac, Przedmiot trutka, Przedmiot mieso, Przedmiot jablko){
+            Lposilku(postac, jablko, trutka, mieso);
 
-    }
+        }
 
     public static void bron(Postac postac, Przedmiot miecz, Przedmiot tarcza){
         Lbroni(postac, miecz, tarcza);
 
-    }
+        }
 
     public static void opatrunki(Postac postac, Przedmiot opatrunki, Przedmiot odtrutka, Przedmiot trutka){
         Llekow(postac, opatrunki, odtrutka, trutka);
 
-    }
+        }
 
-}
+    }

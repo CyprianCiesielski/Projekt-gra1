@@ -12,9 +12,6 @@ public class Panel extends JPanel implements MouseListener {
         addMouseListener(this);
     }
 
-    public Panel(src.com.company.Main main) {
-
-    }
 
     @Override
     public void paintComponent(Graphics g) {
